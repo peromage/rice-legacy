@@ -461,8 +461,8 @@
   </Viewer>
   <Editor>
     <EditWaitTime>2000</EditWaitTime>
-    <SynEditOptions>987147</SynEditOptions>
-    <SynEditTabWidth>8</SynEditTabWidth>
+    <SynEditOptions>983051</SynEditOptions>
+    <SynEditTabWidth>4</SynEditTabWidth>
   </Editor>
   <Differ>
     <Colors>
