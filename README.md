@@ -10,20 +10,22 @@ PowerShell
 
 ```powershell
 # In $PROFILE.CurrentUserAllHosts
-. /path/to/init.ps1
+# Local changes go into rice/local.ps1
+. rice/init.ps1
 ```
 
 Bash
 
 ```bash
 # In ~/.bashrc
-. /path/to/init.sh
+# Local changes go into rice/local.bash
+. rice/init.bash
 ```
 ## Directories
 
-- *ripwsh*: Rice PowerShell module.
-- *ribash*: Rice Bash module.
+- *pwsh*: PowerShell init files.
+- *shell*: POSIX compliant shell init files.
 - *rivscode*: Rice VSCode config
 - *notes*: Some notes.
 - *appconfig*: Configurations of other commonly used applications.
-- *scripts*: Scripts.
+- *scripts*: Executable scripts.
