@@ -21,6 +21,7 @@ Bash
 # Local changes go into rice/local.bash
 . rice/init.bash
 ```
+
 ## Directories
 
 - *pwsh*: PowerShell init files.
@@ -28,3 +29,11 @@ Bash
 - *notes*: Some notes.
 - *config*: Configurations of other commonly used applications.
 - *scripts*: Executable scripts.
+
+## Credits
+
+This repo used the following projects:
+
+- [z.lua][zlua_url]
+
+[zlua_url]: https://github.com/skywind3000/z.lua
