@@ -25,7 +25,6 @@ Bash
 
 - *pwsh*: PowerShell init files.
 - *shell*: POSIX compliant shell init files.
-- *rivscode*: Rice VSCode config
 - *notes*: Some notes.
-- *appconfig*: Configurations of other commonly used applications.
+- *config*: Configurations of other commonly used applications.
 - *scripts*: Executable scripts.
