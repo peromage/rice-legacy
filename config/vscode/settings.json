@@ -12,7 +12,7 @@
     "editor.cursorSmoothCaretAnimation": true,
     "editor.cursorWidth": 2,
     "editor.detectIndentation": true,
-    "editor.fontFamily": "Cascadia Code PL, Sarasa Term CL, Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "Cascadia Code PL, Sarasa Term CL, Consolas, monospace",
     "editor.fontLigatures": true,
     "editor.fontWeight": "normal",
     "editor.insertSpaces": true,
