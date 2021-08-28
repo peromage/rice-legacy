@@ -1,3 +1,6 @@
+#!/bin/sh
+### theme-cmder.sh -- Cmder style prompt
+
 _RET_FACE_COLOR_() {
     case "$?" in
         0) echo -e '\e[32m:)\e[0m';;
