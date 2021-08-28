@@ -1,16 +1,12 @@
-<###############################################################################
-
+<###
 .SYNOPSIS
+theme-my-lite.ps1
 PowerShell lite theme
-
-Created by peromage 2021/02/24
-Last modified 2021/02/24
-
-###############################################################################>
+###>
 
 function global:prompt {
     $myPwd = { $pwd.Path -replace ([regex]::Escape($HOME)+'(.*)'),'~$1' }
-    if ($global:ri_meta.Privileged) {
+    if ($rice.rooted) {
         Write-Host -NoNewline -ForegroundColor Red "! $(&$myPwd)"
     } else {
         Write-Host -NoNewline -ForegroundColor Green "> $(&$myPwd)"
