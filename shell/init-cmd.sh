@@ -2,15 +2,22 @@
 ### init-cmd.sh -- A collection for aliases and commands
 
 alias ll="ls -lahF --color=always --group-directories-first"
+
+## Linuxbrew
 alias brew="HOMEBREW_NO_AUTO_UPDATE=1 PATH=/home/linuxbrew/.linuxbrew/bin:$PATH /home/linuxbrew/.linuxbrew/bin/brew"
 
-# z.lua
+## Emacs
+
+alias em="emacsclient -c -nw"
+alias emm="emacsclient -n"
+
+## z.lua
 alias zb='z -b'
 alias zc='z -c'
 alias zi='z -i'
 alias zf='z -I'
 
-# fzf
+## fzf
 ffdo() {
     if [ -z "$1" ]; then
         echo "Usage: ffdo <prog>"
@@ -24,7 +31,7 @@ ffcd() {
     [ -n "$_tmp" ] && cd "$_tmp"
 }
 
-# lf
+## lf
 lfcd() {
     _tmp="$(mktemp)"
     lf -last-dir-path="$_tmp" "$@"
@@ -37,8 +44,8 @@ lfcd() {
     fi
 }
 
-# ranger
-ranger() {
+## ranger
+rr() {
     if [ -n "$RANGER_LEVEL" ]; then
         echo "nested ranger!"
         return

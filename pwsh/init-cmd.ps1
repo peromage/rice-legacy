@@ -57,7 +57,7 @@ function exportVars {
     }
 }
 
-# lf
+## lf
 function lfcd {
     $tmp = [IO.Path]::GetTempFileName()
     lf "-last-dir-path=$tmp"
@@ -70,7 +70,7 @@ function lfcd {
     }
 }
 
-# z.lua
+## z.lua
 function zb { z -b @args }
 function zc { z -c @args }
 function zi { z -i @args }
