@@ -13,10 +13,10 @@ esac
 [ -n "$rice_loaded" ] && return
 
 ## Environment initialization
-export rice_loaded=1
-export rice_home=$(dirname $(realpath "$BASH_SOURCE"))
-export rice_scripts="$rice_home/scripts"
-export rice_local="$rice_home/local.bash"
+rice_loaded=1
+rice_home=$(dirname $(realpath "$BASH_SOURCE"))
+rice_scripts="$rice_home/scripts"
+rice_local="$rice_home/local.bash"
 export PATH="$PATH:$rice_scripts"
 rice_inc() {
     _tmp="$1" && shift
@@ -27,7 +27,7 @@ rice_inc() {
 rice_inc init-env
 rice_inc init-cmd
 rice_inc init-windows
-rice_inc theme-my-bash
+rice_inc theme-normal
 rice_inc plugin-zlua
 
 ## Wrapup
