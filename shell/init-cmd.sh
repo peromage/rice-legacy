@@ -8,8 +8,8 @@ alias brew="HOMEBREW_NO_AUTO_UPDATE=1 PATH=/home/linuxbrew/.linuxbrew/bin:$PATH 
 
 ## Emacs
 
-alias em="emacsclient -c -nw"
-alias emm="emacsclient -n"
+alias emm="emacsclient -c -nw"
+alias em="emacsclient -n"
 
 ## z.lua
 alias zb='z -b'
