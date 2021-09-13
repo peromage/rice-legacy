@@ -6,10 +6,19 @@ alias ll="ls -lahF --color=always --group-directories-first"
 ## Linuxbrew
 alias brew="HOMEBREW_NO_AUTO_UPDATE=1 PATH=/home/linuxbrew/.linuxbrew/bin:$PATH /home/linuxbrew/.linuxbrew/bin/brew"
 
-## Emacs
-
+## Emacs clients
 alias emm="emacsclient -c -nw"
 alias em="emacsclient -n"
+
+## Emacs file manager
+ef() {
+    _tmp="$1"
+    if [ -n "$_tmp" ]; then
+        emacs -Q -nw --eval "(progn (xterm-mouse-mode 1) (dired \"$_tmp\"))"
+    else
+        emacs -Q -nw --eval "(progn (xterm-mouse-mode 1) (dired \"~\"))"
+    fi
+}
 
 ## z.lua
 alias zb='z -b'
