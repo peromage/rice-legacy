@@ -24,7 +24,6 @@ rice_inc() {
 }
 
 ## Bootstrap
-rice_inc init-env
 rice_inc init-cmd
 rice_inc init-windows
 rice_inc theme-normal
