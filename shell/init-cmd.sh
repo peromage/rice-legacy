@@ -1,4 +1,3 @@
-#!/bin/sh
 ### init-cmd.sh -- A collection for aliases and commands
 
 alias ll="ls -lahF --color=always --group-directories-first"

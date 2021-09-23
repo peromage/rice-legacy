@@ -1,4 +1,3 @@
-#!/bin/sh
 ### theme-cmder.sh -- Cmder style prompt
 
 _RET_FACE_COLOR_() {

@@ -1,4 +1,3 @@
-#!/bin/sh
 ### theme-fish.sh -- Fish style prompt
 
 _PWD_FISH_COLLAPSED_() {

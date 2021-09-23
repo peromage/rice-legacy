@@ -1,4 +1,3 @@
-#!/bin/sh
 ### init-windows.sh -- Shell in Windows
 
 alias win_msys_update="pacman --needed -S bash pacman pacman-mirrors msys2-runtime"
