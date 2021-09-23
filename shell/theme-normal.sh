@@ -1,4 +1,3 @@
-#!/usr/bin/bash
 ### theme-normal.sh -- Normal mediocre prompt
 
 case "$UID" in

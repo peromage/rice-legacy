@@ -1,4 +1,3 @@
-#!/bin/sh
 ### plugin-zlua.sh -- Z.lua Initialization
 
 if [ -n "$1" ]; then
