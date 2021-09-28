@@ -1,8 +1,8 @@
-### profile.sh -- Environment variables
+### profile.sh -- Rice Environment variables
 
-# Daily
+# Tools
 export EDITOR=vim
-export SHELL=/bin/sh
+export SHELL=/bin/bash
 
 # XDG paths
 export XDG_CONFIG_HOME=$HOME/.config
