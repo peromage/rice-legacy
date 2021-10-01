@@ -1,5 +1,6 @@
 {
     "breadcrumbs.filePath": "last",
+    "csharp.semanticHighlighting.enabled": true,
     "debug.inlineValues": true,
     "debug.internalConsoleOptions": "neverOpen",
     "debug.openDebug": "neverOpen",
@@ -12,7 +13,7 @@
     "editor.cursorSmoothCaretAnimation": true,
     "editor.cursorWidth": 2,
     "editor.detectIndentation": true,
-    "editor.fontFamily": "Cascadia Code PL, Sarasa Term CL, Consolas, monospace",
+    "editor.fontFamily": "Iosevka Regular, Cascadia Code PL, Sarasa Term CL, Consolas, monospace",
     "editor.fontLigatures": true,
     "editor.fontWeight": "normal",
     "editor.insertSpaces": true,
@@ -75,7 +76,9 @@
         "vi",
         "nano",
         "tmux",
-        "nvim"
+        "nvim",
+        "emacs",
+        "emacsclient"
     ],
     "terminal.integrated.rendererType": "canvas",
     "terminal.integrated.rightClickBehavior": "default",
@@ -90,9 +93,11 @@
     "vscode-neovim.neovimExecutablePaths.win32": "nvim",
     "vscode-neovim.revealCursorScrollLine": true,
     "vscode-neovim.useCtrlKeysForInsertMode": false,
+    "window.autoDetectHighContrast": false,
+    "window.menuBarVisibility": "compact",
     "window.restoreWindows": "none",
     "window.title": "${rootName}${separator}${activeEditorLong}${dirty}",
-    "workbench.colorTheme": "Dracula Soft",
+    "workbench.colorTheme": "Quiet Light",
     "workbench.editor.enablePreviewFromCodeNavigation": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.highlightModifiedTabs": true,
@@ -118,6 +123,5 @@
     "workbench.settings.useSplitJSON": true,
     "workbench.startupEditor": "welcomePageInEmptyWorkbench",
     "workbench.tree.renderIndentGuides": "always",
-    "zenMode.fullScreen": false,
     "zenMode.hideLineNumbers": false
 }
