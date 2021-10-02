@@ -1,3 +1,8 @@
+temp/
+tmp/
+cache/
+.cache/
+
 local.sh
 local.bash
 local.ps1
