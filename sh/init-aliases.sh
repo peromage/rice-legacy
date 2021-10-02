@@ -19,12 +19,6 @@ ef() {
     fi
 }
 
-## z.lua
-alias zb='z -b'
-alias zc='z -c'
-alias zi='z -i'
-alias zf='z -I'
-
 ## fzf
 ffdo() {
     if [ -z "$1" ]; then
@@ -53,7 +47,7 @@ lfcd() {
 }
 
 ## ranger
-rr() {
+rf() {
     if [ -n "$RANGER_LEVEL" ]; then
         echo "nested ranger!"
         return
