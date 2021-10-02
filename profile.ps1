@@ -1,7 +1,7 @@
 <###
 .SYNOPSIS
-init-env.ps1
-Environment variable setup for the session
+profile.ps1
+Environment variable setup for pwsh sessions
 ###>
 
 $env:EDITOR = "vim"

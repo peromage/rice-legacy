@@ -1,8 +1,12 @@
 <###
 .SYNOPSIS
-init-cmd.ps1
+init-aliases.ps1
 Common utility functions
 ###>
+
+<#------------------------------------------------------------------------------
+Utility wrappers
+------------------------------------------------------------------------------#>
 
 function listDirectory {
     [CmdletBinding(PositionalBinding=$false, DefaultParameterSetName="sortByDefault")]
@@ -57,8 +61,14 @@ function exportVars {
     }
 }
 
-## lf
-function lfcd {
+Set-Alias ll listDirectory
+Set-Alias hispath getHistoryPath
+
+<#------------------------------------------------------------------------------
+Lf file manager
+------------------------------------------------------------------------------#>
+
+function lfChangeDirectory {
     $tmp = [IO.Path]::GetTempFileName()
     lf "-last-dir-path=$tmp"
     if (Test-Path -PathType Leaf $tmp) {
@@ -70,12 +80,4 @@ function lfcd {
     }
 }
 
-## z.lua
-function zb { z -b @args }
-function zc { z -c @args }
-function zi { z -i @args }
-function zf { z -I @args }
-
-
-Set-Alias ll listDirectory
-Set-Alias hispath getHistoryPath
+Set-Alias lfcd lfChangeDirectory
