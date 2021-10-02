@@ -1,10 +1,13 @@
 <###
 .SYNOPSIS
-init-windows.ps1
+init-lib-windows.ps1
 Utilities for Windows Only
 ###>
 
-## Skips on non-Windows platform
+<#------------------------------------------------------------------------------
+Skips on non-Windows platform
+------------------------------------------------------------------------------#>
+
 if (-not $IsWindows) {
     return
 }
@@ -12,6 +15,7 @@ if (-not $IsWindows) {
 <#------------------------------------------------------------------------------
 Admin related
 ------------------------------------------------------------------------------#>
+
 function testAdmin {
     return ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(
         [Security.Principal.WindowsBuiltinRole]::Administrator)
@@ -52,6 +56,7 @@ function evaltoAdmin {
 <#------------------------------------------------------------------------------
 Operation of path
 ------------------------------------------------------------------------------#>
+
 function getEnvUserPath {
     $path = [Environment]::GetEnvironmentVariable(
         "Path", [EnvironmentVariableTarget]::User)
@@ -130,6 +135,7 @@ function removeEnvUserPath {
 <#------------------------------------------------------------------------------
 Operation of environment variables
 ------------------------------------------------------------------------------#>
+
 function setEnvUserVars {
     param([hashtable]$envVarHash)
     foreach ($_ in $envVarHash.GetEnumerator()) {
@@ -149,6 +155,7 @@ function removeEnvUserVars {
 <#------------------------------------------------------------------------------
 Cygwin
 ------------------------------------------------------------------------------#>
+
 function installCygwin {
     cygwin-install --no-admin --no-desktop --no-shortcuts --no-startmenu @args
 }
@@ -156,6 +163,7 @@ function installCygwin {
 <#------------------------------------------------------------------------------
 Aliases
 ------------------------------------------------------------------------------#>
+
 Set-Alias sudo runasAdmin
 Set-Alias su evaltoAdmin
 Set-Alias issu testAdmin
