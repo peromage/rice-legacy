@@ -1,14 +1,27 @@
 ### init-cmd.sh -- A collection for aliases and commands
 
+##------------------------------------------------------------------------------
+## Utility wrappers
+##------------------------------------------------------------------------------
+
 alias ll="ls -lahF --color=always --group-directories-first"
 
+##------------------------------------------------------------------------------
 ## Linuxbrew
+##------------------------------------------------------------------------------
+
 alias brew="HOMEBREW_NO_AUTO_UPDATE=1 PATH=/home/linuxbrew/.linuxbrew/bin:$PATH /home/linuxbrew/.linuxbrew/bin/brew"
 
-## Emacs clients
-alias emm="emacsclient -c -nw"
-alias em="emacsclient -n"
+##------------------------------------------------------------------------------
+## Emacs
+##------------------------------------------------------------------------------
 
+## Open files in the terminal
+alias emm="emacsclient -c -nw"
+## Open files in the current frame
+alias em="emacsclient -n"
+## Emacs daemon
+alias emdaemon="emacs --daemon"
 ## Emacs file manager
 ef() {
     _tmp="$1"
@@ -19,7 +32,10 @@ ef() {
     fi
 }
 
+##------------------------------------------------------------------------------
 ## fzf
+##------------------------------------------------------------------------------
+
 ffdo() {
     if [ -z "$1" ]; then
         echo "Usage: ffdo <prog>"
@@ -33,7 +49,10 @@ ffcd() {
     [ -n "$_tmp" ] && cd "$_tmp"
 }
 
+##------------------------------------------------------------------------------
 ## lf
+##------------------------------------------------------------------------------
+
 lfcd() {
     _tmp="$(mktemp)"
     lf -last-dir-path="$_tmp" "$@"
@@ -46,7 +65,10 @@ lfcd() {
     fi
 }
 
+##------------------------------------------------------------------------------
 ## ranger
+##------------------------------------------------------------------------------
+
 rf() {
     if [ -n "$RANGER_LEVEL" ]; then
         echo "nested ranger!"

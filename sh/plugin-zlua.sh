@@ -10,7 +10,7 @@ fi
 
 which "$_lua_bin" 1>/dev/null 2>&1
 if [ "$?" -eq 0 ]; then
-    eval "$($_lua_bin $rice_scripts/z.lua --init bash enhanced once)"
+    eval "$($_lua_bin $rice_scripts_dir/z.lua --init bash enhanced once)"
     ## z.lua aliases
     alias zb='z -b'
     alias zc='z -c'
