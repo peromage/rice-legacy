@@ -52,8 +52,9 @@
     "powershell.integratedConsole.showOnStartup": false,
     "powershell.pester.useLegacyCodeLens": false,
     "powershell.powerShellDefaultVersion": "pwsh.exe",
+    "powershell.promptToUpdatePackageManagement": false,
     "powershell.promptToUpdatePowerShell": false,
-    "powershell.startAsLoginShell.linux": true,
+    "powershell.startAsLoginShell.osx": false,
     "problems.showCurrentInStatus": true,
     "python.languageServer": "Pylance",
     "remote.SSH.remotePlatform": {
@@ -70,6 +71,8 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.defaultProfile.windows": "pwsh",
     "terminal.integrated.fontWeight": "normal",
     "terminal.integrated.localEchoExcludePrograms": [
         "vim",
@@ -80,11 +83,36 @@
         "emacs",
         "emacsclient"
     ],
-    "terminal.integrated.rendererType": "canvas",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "icon": "terminal-bash",
+            "path": "bash"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "pwsh": {
+            "icon": "terminal-powershell",
+            "path": "pwsh"
+        },
+        "tmux": {
+            "icon": "terminal-tmux",
+            "path": "tmux"
+        },
+        "zsh": {
+            "path": "zsh"
+        }
+    },
+    "terminal.integrated.profiles.windows": {
+        "pwsh": {
+            "args": [
+                "-NoLogo"
+            ],
+            "source": "PowerShell"
+        }
+    },
     "terminal.integrated.rightClickBehavior": "default",
     "terminal.integrated.sendKeybindingsToShell": true,
-    "terminal.integrated.shell.windows": "pwsh.exe",
-    "terminal.integrated.shellArgs.windows": "-NoLogo",
     "update.enableWindowsBackgroundUpdates": false,
     "update.mode": "manual",
     "vscode-neovim.mouseSelectionStartVisualMode": true,
@@ -106,16 +134,9 @@
     "workbench.editor.restoreViewState": false,
     "workbench.editor.splitSizing": "split",
     "workbench.editor.tabSizing": "shrink",
-    "workbench.editorAssociations": [
-        {
-            "filenamePattern": "*.ipynb",
-            "viewType": "jupyter.notebook.ipynb"
-        },
-        {
-            "filenamePattern": "*.ipynb",
-            "viewType": "jupyter-notebook"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
     "workbench.enableExperiments": false,
     "workbench.list.smoothScrolling": true,
     "workbench.settings.openDefaultKeybindings": true,
