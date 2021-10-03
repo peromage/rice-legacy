@@ -2,9 +2,9 @@
 # [include]
 # path = "/path/to/gitrc"
 
-#[user]
-#name = peromage
-#email = peromage@outlook.com
+[user]
+name = peromage
+email = peromage@outlook.com
 
 [core]
 autocrlf = input
