@@ -40,10 +40,11 @@ function rice_inc {
 Bootstrap
 ------------------------------------------------------------------------------#>
 
+. rice_inc init-base
 . rice_inc init-aliases
 . rice_inc init-lib-windows
 . rice_inc theme-my-pwsh
-. rice_inc plugin-zlua lua54
+. rice_inc plugin-zlua
 
 <#------------------------------------------------------------------------------
 Wrapup
