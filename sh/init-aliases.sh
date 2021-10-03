@@ -24,29 +24,11 @@ alias em="emacsclient -n"
 alias emdaemon="emacs --daemon"
 ## Emacs file manager
 ef() {
-    _tmp="$1"
-    if [ -n "$_tmp" ]; then
-        emacs -Q -nw --eval "(progn (xterm-mouse-mode 1) (dired \"$_tmp\"))"
-    else
-        emacs -Q -nw --eval "(progn (xterm-mouse-mode 1) (dired \"~\"))"
-    fi
-}
-
-##------------------------------------------------------------------------------
-## fzf
-##------------------------------------------------------------------------------
-
-ffdo() {
-    if [ -z "$1" ]; then
-        echo "Usage: ffdo <prog>"
+    if [ -n "$1" ]; then
+        emacs -Q -nw --eval "(progn (xterm-mouse-mode 1) (dired \"$1\"))"
         return
     fi
-    eval "$1 $@ \$(fzf)"
-}
-
-ffcd() {
-    _tmp="$(fzf)"
-    [ -n "$_tmp" ] && cd "$_tmp"
+    emacs -Q -nw --eval "(progn (xterm-mouse-mode 1) (dired \"~\"))"
 }
 
 ##------------------------------------------------------------------------------
@@ -55,14 +37,15 @@ ffcd() {
 
 lfcd() {
     _tmp="$(mktemp)"
-    lf -last-dir-path="$_tmp" "$@"
+    lf -last-dir-path="$_tmp" $@
     if [ -f "$_tmp" ]; then
-        _tmp1="$(cat "$_tmp")"
+        _dir="$(cat "$_tmp")"
         rm -f "$_tmp"
-        if [ -d "$_tmp1" ] && [ "$_tmp1" != "$(pwd)" ]; then
-            cd "$_tmp1"
+        if [ -d "$_dir" ] && [ "$_dir" != "$(pwd)" ]; then
+            cd "$_dir"
         fi
     fi
+    unset _tmp _dir
 }
 
 ##------------------------------------------------------------------------------
@@ -71,8 +54,42 @@ lfcd() {
 
 rf() {
     if [ -n "$RANGER_LEVEL" ]; then
-        echo "nested ranger!"
+        echo "Nested ranger!"
         return
     fi
-    ranger "$@"
+    ranger $@
 }
+
+##------------------------------------------------------------------------------
+## fzf
+##------------------------------------------------------------------------------
+
+ffdo() {
+    if [ -z "$1" ]; then
+        echo "Usage: ffdo <cmd> [arguments]"
+        return
+    fi
+    _cmd="$1" && shift
+    _target="$(fzf)"
+    [ -n "$_target" ] && eval "$_cmd $@ $_target"
+    unset _cmd _target
+}
+
+ffcd() {
+    _target="$(fzf)"
+    [ -n "$_target" ] && cd "$_target"
+    unset _target
+}
+
+##------------------------------------------------------------------------------
+## mysy and cygwin
+##------------------------------------------------------------------------------
+
+case "$OS" in
+    *Windows*) ;;
+    *windows*) ;;
+    *) return;;
+esac
+
+alias win_msys_update="pacman --needed -S bash pacman pacman-mirrors msys2-runtime"
+alias win_cygwin_install="cygwin-setup --no-admin --no-desktop --no-shortcuts --no-startmenu"

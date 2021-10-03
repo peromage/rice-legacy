@@ -34,7 +34,6 @@ rice_inc() {
 ## Bootstrap
 ##------------------------------------------------------------------------------
 
-rice_inc init-lib-windows
 rice_inc init-aliases
 rice_inc theme-normal
 rice_inc plugin-zlua
