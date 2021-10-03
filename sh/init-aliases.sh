@@ -1,4 +1,4 @@
-### init-cmd.sh -- A collection for aliases and commands
+### init-aliases.sh -- A collection for aliases and commands
 
 ##------------------------------------------------------------------------------
 ## Utility wrappers
