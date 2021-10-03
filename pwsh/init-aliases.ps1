@@ -85,7 +85,7 @@ function emdaemon {
 ## Emacs file manager
 function ef {
     param ($dir="~")
-    emacs -Q -nw --eval "(progn (xterm-mouse-mode 1) (dired `"$dir`"))"
+    emacs -Q -nw --eval "(progn (xterm-mouse-mode 1) (dired \`"$dir\`"))"
 }
 
 <#------------------------------------------------------------------------------
