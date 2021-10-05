@@ -92,6 +92,9 @@
             "path": "fish"
         },
         "pwsh": {
+            "args": [
+                "-NoLogo"
+            ],
             "icon": "terminal-powershell",
             "path": "pwsh"
         },
