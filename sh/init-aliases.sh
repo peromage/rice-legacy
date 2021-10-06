@@ -17,9 +17,9 @@ alias brew="HOMEBREW_NO_AUTO_UPDATE=1 PATH=/home/linuxbrew/.linuxbrew/bin:$PATH 
 ##------------------------------------------------------------------------------
 
 ## Open files in the terminal
-alias emm="emacsclient -c -nw"
+alias em="emacsclient -c -nw"
 ## Open files in the current frame
-alias em="emacsclient -n"
+alias emm="emacsclient -n"
 ## Emacs daemon
 alias emdaemon="emacs --daemon"
 ## Emacs file manager
