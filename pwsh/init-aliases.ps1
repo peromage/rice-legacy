@@ -71,11 +71,11 @@ Emacs
 ------------------------------------------------------------------------------#>
 
 ## Open files in the terminal
-function emm {
+function em {
     emacsclient -c -nw @args
 }
 ## Open files in the current frame
-function em {
+function emm {
     emacsclient -n @args
 }
 ## Emacs daemon
