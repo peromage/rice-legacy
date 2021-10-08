@@ -1,6 +1,12 @@
-# How to include this file
-# [include]
-# path = "/path/to/gitrc"
+## How to include this file:
+## [include]
+## path = "/path/to/gitrc"
+
+## To make git works with ssh-agent on Windows:
+## 1. Enable `OpenSSH Authentication Agent` from `Services` panel
+## 2. Add the following section to the gitconfig
+## [core]
+## sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
 
 [user]
 name = peromage
