@@ -568,7 +568,7 @@
   <Lua>
     <PathToLibrary>lua5.1.dll</PathToLibrary>
   </Lua>
-  <NameShortcutFile>rice_keymaps.scf</NameShortcutFile>
+  <NameShortcutFile>my_keys_2.scf</NameShortcutFile>
   <HotKeySortOrder>2</HotKeySortOrder>
   <UseEnterToCloseHotKeyEditor>True</UseEnterToCloseHotKeyEditor>
   <LastUsedPacker>zip</LastUsedPacker>
