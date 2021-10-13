@@ -620,7 +620,12 @@
       </Hotkey>
       <Hotkey>
         <Shortcut>V</Shortcut>
-        <Command>cm_SetTabOptionPathLocked</Command>
+        <Command>cm_SetTabOptionDirsInNewTab</Command>
+        <Control>Files Panel</Control>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>U</Shortcut>
+        <Command>cm_MarkUnmarkAll</Command>
         <Control>Files Panel</Control>
       </Hotkey>
     </Form>
