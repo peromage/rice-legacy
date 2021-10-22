@@ -1,8 +1,8 @@
-<###
+<#
 .SYNOPSIS
 theme-my-pwsh.ps1
 My pwsh prompt. It is lite
-###>
+#>
 
 function global:_simplifyHomePath {
     $pwd.Path -replace ([regex]::Escape($HOME)+'(.*)'),'~$1'

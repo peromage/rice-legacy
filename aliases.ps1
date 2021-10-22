@@ -1,13 +1,19 @@
-<###
+<#
 .SYNOPSIS
-init-aliases.ps1
-Common utility functions
-###>
+aliases.ps1
+Utility setup for pwsh sessions
+#>
 
-<#------------------------------------------------------------------------------
-Utility wrappers
-------------------------------------------------------------------------------#>
+## Environment variables
+$env:EDITOR = "vim"
 
+## XDG
+$env:XDG_DATA_HOME = Join-Path $HOME ".local/share"
+$env:XDG_STATE_HOME = Join-Path $HOME ".local/state"
+$env:XDG_CONFIG_HOME = Join-Path $HOME ".config"
+$env:XDG_CACHE_HOME = Join-Path $HOME ".cache"
+
+## ls
 if ("Alias" -eq (Get-Command ls).CommandType) {
     # On Windows, ls is an alias of Get-ChildItem
     function ll {
@@ -58,18 +64,12 @@ if ("Alias" -eq (Get-Command ls).CommandType) {
 }
 
 
-<#------------------------------------------------------------------------------
-Linuxbrew
-------------------------------------------------------------------------------#>
-
+## Linuxbrew
 function brew {
     env HOMEBREW_NO_AUTO_UPDATE=1 PATH=/home/linuxbrew/.linuxbrew/bin:$PATH /home/linuxbrew/.linuxbrew/bin/brew @args
 }
 
-<#------------------------------------------------------------------------------
-Emacs
-------------------------------------------------------------------------------#>
-
+## Emacs
 ## Open files in the terminal
 function em {
     emacsclient -c -nw @args
@@ -88,10 +88,7 @@ function ef {
     emacs -Q -nw --eval "(progn (xterm-mouse-mode 1) (dired \`"$dir\`"))"
 }
 
-<#------------------------------------------------------------------------------
-lf
-------------------------------------------------------------------------------#>
-
+## lf
 function lfcd {
     $tmp = [IO.Path]::GetTempFileName()
     lf "-last-dir-path=$tmp"
@@ -104,10 +101,7 @@ function lfcd {
     }
 }
 
-<#------------------------------------------------------------------------------
-ranger
-------------------------------------------------------------------------------#>
-
+## ranger
 function rf {
     if ($null -ne $RANGER_LEVEL) {
         Write-Host "Nested ranger!"
@@ -116,10 +110,7 @@ function rf {
     ranger @args
 }
 
-<#------------------------------------------------------------------------------
-fzf
-------------------------------------------------------------------------------#>
-
+## fzf
 function ffdo {
     param ($cmd)
     if ($null -eq $cmd) {
@@ -139,10 +130,7 @@ function ffcd {
     }
 }
 
-<#------------------------------------------------------------------------------
-cygwin
-------------------------------------------------------------------------------#>
-
+## Windows specific
 if (-not $IsWindows) {
     return
 }

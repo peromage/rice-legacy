@@ -1,8 +1,8 @@
-<###
+<#
 .SYNOPSIS
 theme-normal.ps1
 Normal mediocre prompt
-###>
+#>
 
 function global:_simplifyHomePath {
     $pwd.Path -replace ([regex]::Escape($HOME)+'(.*)'),'~$1'

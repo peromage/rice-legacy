@@ -1,8 +1,8 @@
-<###
+<#
 .SYNOPSIS
 init-lib-windows.ps1
 Utilities for Windows Only
-###>
+#>
 
 <#------------------------------------------------------------------------------
 Skips on non-Windows platform

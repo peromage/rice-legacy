@@ -1,8 +1,8 @@
-<###
+<#
 .SYNOPSIS
 plugin-zlua.ps1
 PowerShell bootstrap
-###>
+#>
 
 &{
     param ($lua_bin="lua5.3")
