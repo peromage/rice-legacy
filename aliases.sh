@@ -1,11 +1,14 @@
 ### aliases.sh -- Rice Environment variables
 
-## Tools
+## Environment variables
 export EDITOR=vim
-## XDG paths
+
+## XDG
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.local/share
+
 ## Input method
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
@@ -26,9 +29,9 @@ alias emdaemon="emacs --daemon"
 ef() {
     if [ -n "$1" ]; then
         emacs -Q -nw --eval "(progn (xterm-mouse-mode 1) (dired \"$1\"))"
-        return
+    else
+        emacs -Q -nw --eval "(progn (xterm-mouse-mode 1) (dired \"~\"))"
     fi
-    emacs -Q -nw --eval "(progn (xterm-mouse-mode 1) (dired \"~\"))"
 }
 
 ## lf
