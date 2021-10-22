@@ -8,10 +8,10 @@ Utility setup for pwsh sessions
 $env:EDITOR = "vim"
 
 ## XDG
-$env:XDG_DATA_HOME = Join-Path $HOME ".local/share"
-$env:XDG_STATE_HOME = Join-Path $HOME ".local/state"
-$env:XDG_CONFIG_HOME = Join-Path $HOME ".config"
-$env:XDG_CACHE_HOME = Join-Path $HOME ".cache"
+$env:XDG_DATA_HOME = Join-Path $HOME .local/share
+$env:XDG_STATE_HOME = Join-Path $HOME .local/state
+$env:XDG_CONFIG_HOME = Join-Path $HOME .config
+$env:XDG_CACHE_HOME = Join-Path $HOME .cache
 
 ## ls
 if ("Alias" -eq (Get-Command ls).CommandType) {
