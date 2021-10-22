@@ -25,7 +25,7 @@ Bash
 ## Directories
 
 - *pwsh*: PowerShell init files.
-- *shell*: POSIX compliant shell init files.
+- *bash*: Bash init files.
 - *notes*: Some notes.
 - *config*: Configurations of other commonly used applications.
 - *scripts*: Executable scripts.
