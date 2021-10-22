@@ -1,21 +1,21 @@
-### init-aliases.sh -- A collection for aliases and commands
+### aliases.sh -- Rice Environment variables
 
-##------------------------------------------------------------------------------
-## Utility wrappers
-##------------------------------------------------------------------------------
+## Tools
+export EDITOR=vim
+## XDG paths
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+## Input method
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
 
+## Common aliases
 alias ll="ls -lahF --color=always --group-directories-first"
-
-##------------------------------------------------------------------------------
-## Linuxbrew
-##------------------------------------------------------------------------------
-
 alias brew="HOMEBREW_NO_AUTO_UPDATE=1 PATH=/home/linuxbrew/.linuxbrew/bin:$PATH /home/linuxbrew/.linuxbrew/bin/brew"
 
-##------------------------------------------------------------------------------
 ## Emacs
-##------------------------------------------------------------------------------
-
 ## Open files in the terminal
 alias em="emacsclient -c -nw"
 ## Open files in the current frame
@@ -31,10 +31,7 @@ ef() {
     emacs -Q -nw --eval "(progn (xterm-mouse-mode 1) (dired \"~\"))"
 }
 
-##------------------------------------------------------------------------------
 ## lf
-##------------------------------------------------------------------------------
-
 lfcd() {
     _tmp="$(mktemp)"
     lf -last-dir-path="$_tmp" $@
@@ -48,10 +45,7 @@ lfcd() {
     unset _tmp _dir
 }
 
-##------------------------------------------------------------------------------
 ## ranger
-##------------------------------------------------------------------------------
-
 rf() {
     if [ -n "$RANGER_LEVEL" ]; then
         echo "Nested ranger!"
@@ -60,10 +54,7 @@ rf() {
     ranger $@
 }
 
-##------------------------------------------------------------------------------
 ## fzf
-##------------------------------------------------------------------------------
-
 ffdo() {
     if [ -z "$1" ]; then
         echo "Usage: ffdo <cmd> [arguments]"
@@ -81,10 +72,7 @@ ffcd() {
     unset _target
 }
 
-##------------------------------------------------------------------------------
 ## mysy and cygwin
-##------------------------------------------------------------------------------
-
 case "$OS" in
     *Windows*) ;;
     *windows*) ;;

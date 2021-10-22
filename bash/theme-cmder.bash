@@ -1,4 +1,4 @@
-### theme-cmder.sh -- Cmder style prompt
+### theme-cmder.bash -- Cmder style prompt
 
 _RET_FACE_COLOR_() {
     case "$?" in
