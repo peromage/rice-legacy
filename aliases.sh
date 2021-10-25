@@ -15,7 +15,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
 ## Common aliases
-alias ll="ls -lahF --color=always --group-directories-first"
+alias ll="ls -lahF --color=auto"
 alias brew="HOMEBREW_NO_AUTO_UPDATE=1 PATH=/home/linuxbrew/.linuxbrew/bin:$PATH /home/linuxbrew/.linuxbrew/bin/brew"
 
 ## Emacs

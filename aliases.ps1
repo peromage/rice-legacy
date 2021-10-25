@@ -59,7 +59,7 @@ if ("Alias" -eq (Get-Command ls).CommandType) {
     }
 } else {
     function ll {
-        ls -lahF --color=always --group-directories-first @args
+        ls -lahF --color=auto @args
     }
 }
 
