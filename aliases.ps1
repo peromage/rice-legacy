@@ -135,6 +135,6 @@ if (-not $IsWindows) {
     return
 }
 
-function cygwin {
-    cygwin-install --no-admin --no-desktop --no-shortcuts --no-startmenu @args
+function cygwin-install {
+    cygwin-setup --no-admin --no-shortcuts @args
 }
