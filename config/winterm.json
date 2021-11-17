@@ -1,6 +1,6 @@
 // THIS IS AN AUTO-GENERATED FILE! Changes to this file will be ignored.
 {
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "defaultProfile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
 
     // Launch Settings
     "initialCols": 100,
@@ -10,8 +10,8 @@
 
     // Selection
     "copyOnSelect": true,
-    "copyFormatting": "all",
-    "trimBlockSelection": false,
+    "copyFormatting": "none",
+    "trimBlockSelection": true,
     "wordDelimiters": " /\\()\"'-.,:;<>~!@#$%^&*|+=[]{}~?\u2502",
 
     // Tab UI
@@ -20,6 +20,7 @@
     "showTerminalTitleInTitlebar": true,
     "tabWidthMode": "equal",
     "tabSwitcherMode": "mru",
+    "useAcrylicInTabRow": true,
 
     // Miscellaneous
     "confirmCloseAllTabs": true,
@@ -27,7 +28,7 @@
     "theme": "system",
     "snapToGridOnResize": true,
     "disableAnimations": true,
-    "startupActions": "",
+    "startupActions": null,
     "focusFollowMouse": false,
 
     "profiles":
@@ -40,7 +41,7 @@
             "closeOnExit": "graceful",
             "colorScheme": "Campbell",
             "cursorColor": "#FEFEFE",
-            "cursorShape": "emptyBox",
+            "cursorShape": "filledBox",
             "fontFace": "Cascadia Mono",
             "fontSize": 9,
             "fontWeight": "normal",
@@ -73,9 +74,8 @@
                 "name": "Pwsh",
                 "commandline": "pwsh -NoLogo",
                 "colorScheme": "Dracula",
-                "fontFace": "Cascadia Code PL",
-                "icon": "\ud83c\udf65",
-                "tabTitle": "pwsh"
+                "fontFace": "Cascadia Mono",
+                "icon": "\ud83c\udf65"
             },
             {
                 "guid": "{38cde125-00f4-4397-bc83-a842702235f9}",
@@ -83,9 +83,8 @@
                 "commandline": "pwsh -NoLogo",
                 "acrylicOpacity": 0.5,
                 "colorScheme": "Dracula",
-                "fontFace": "Cascadia Code PL",
+                "fontFace": "Cascadia Mono",
                 "icon": "\ud83e\uddca",
-                "tabTitle": "pwsh",
                 "useAcrylic": true
             }
         ]
