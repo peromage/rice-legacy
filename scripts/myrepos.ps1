@@ -20,7 +20,7 @@ function logd {
     Write-Host @args
 }
 
-if ($null -eq $env:MYREPOS) {
+if ($null -eq $MYREPOS) {
     logw "Environment variable MYREPOS is not set. You can set it with this format: LocalDir1[,GitURI1];LocalDir2[,GitURI2]"
     exit 1
 }
@@ -28,7 +28,7 @@ if ($null -eq $env:MYREPOS) {
 $repos = @()
 $idx_local = 0
 $idx_git = 1
-foreach ($local_bind in ($env:MYREPOS -split ';')) {
+foreach ($local_bind in ($MYREPOS -split ';')) {
     if ($local_bind -match '([^,]+),?([^,]*)') {
         $repos += ,@($Matches[1], $Matches[2])
     }
