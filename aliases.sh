@@ -16,13 +16,12 @@ export XMODIFIERS=@im=fcitx
 
 ## Common aliases
 alias ll="ls -lahF --color=auto"
-alias brew="HOMEBREW_NO_AUTO_UPDATE=1 PATH=/home/linuxbrew/.linuxbrew/bin:$PATH /home/linuxbrew/.linuxbrew/bin/brew"
 
 ## Emacs
 ## Open files in the terminal
 alias em="emacsclient -c -nw"
 ## Open files in the current frame
-alias emm="emacsclient -n"
+alias emm="emacsclient -c -n"
 ## Emacs daemon
 alias emdaemon="emacs --daemon"
 ## Emacs file manager
@@ -75,7 +74,30 @@ ffcd() {
     unset _target
 }
 
+## linuxbrew
+brewenv() {
+    alias brew="/home/linuxbrew/.linuxbrew/bin/brew"
+    eval "$(brew shellenv)"
+}
+
+## Authentication agents
+update-ssh-agent() {
+    export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+    if [[ ! -e $SSH_AUTH_SOCK ]]; then
+        eval $(ssh-agent -a $SSH_AUTH_SOCK)
+    fi
+}
+
+update-gpg-agent() {
+    unset SSH_AGENT_PID
+    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+    export GPG_TTY="$(tty)"
+    gpg-connect-agent updatestartuptty /bye > /dev/null
+}
+
+################################################################################
 ## mysy and cygwin
+################################################################################
 case "$OS" in
     *Windows*) ;;
     *windows*) ;;
