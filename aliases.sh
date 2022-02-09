@@ -78,6 +78,7 @@ ffcd() {
 brewenv() {
     alias brew="/home/linuxbrew/.linuxbrew/bin/brew"
     eval "$(brew shellenv)"
+    export PS1="(brew) $PS1"
 }
 
 ## Authentication agents
