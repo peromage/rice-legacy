@@ -60,6 +60,10 @@ brewenv() {
     export PS1="(brew) $PS1"
 }
 
+brew() {
+    env HOMEBREW_NO_AUTO_UPDATE=1 PATH=/home/linuxbrew/.linuxbrew/bin:$PATH /home/linuxbrew/.linuxbrew/bin/brew @args
+}
+
 ## Authentication agents
 update-ssh-agent() {
     export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket

@@ -1,10 +1,10 @@
 ### plugin-zlua.bash -- Z.lua Initialization
 
-# Provide a custom lua binary
+## Provide a custom lua binary
 if [ -n "$1" ]; then
     lua_bin="$1"
 else
-    # Fallback version
+    ## Fallback version
     lua_bin=lua5.3
 fi
 

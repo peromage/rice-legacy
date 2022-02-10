@@ -55,20 +55,19 @@ function brew {
     env HOMEBREW_NO_AUTO_UPDATE=1 PATH=/home/linuxbrew/.linuxbrew/bin:$PATH /home/linuxbrew/.linuxbrew/bin/brew @args
 }
 
-## Emacs
-## Open files in the terminal
+## Emacs: Open files in the terminal
 function em {
     emacsclient -c -nw @args
 }
-## Open files in the current frame
+## Emacs: Open files in the current frame
 function emm {
     emacsclient -n @args
 }
-## Emacs daemon
+## Emacs: Daemon
 function emdaemon {
     emacs --daemon @args
 }
-## Emacs file manager
+## Emacs: Dired
 function ef {
     param ($dir="~")
     emacs -Q -nw --eval "(progn (xterm-mouse-mode 1) (dired \`"$dir\`"))"
