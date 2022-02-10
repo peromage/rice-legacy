@@ -1,17 +1,4 @@
-<#
-.SYNOPSIS
-aliases.ps1
-Utility setup for pwsh sessions
-#>
-
-## Environment variables
-$env:EDITOR = "vim"
-
-## XDG
-$env:XDG_DATA_HOME = Join-Path $HOME .local/share
-$env:XDG_STATE_HOME = Join-Path $HOME .local/state
-$env:XDG_CONFIG_HOME = Join-Path $HOME .config
-$env:XDG_CACHE_HOME = Join-Path $HOME .cache
+### init-aliases.ps1 -- Common aliases
 
 ## ls
 if ("Alias" -eq (Get-Command ls).CommandType) {
@@ -62,7 +49,6 @@ if ("Alias" -eq (Get-Command ls).CommandType) {
         ls -lahF --color=auto @args
     }
 }
-
 
 ## Linuxbrew
 function brew {
@@ -128,13 +114,4 @@ function ffcd {
     if ($null -ne $target) {
         Set-Location $target
     }
-}
-
-## Windows specific
-if (-not $IsWindows) {
-    return
-}
-
-function cygwin-install {
-    cygwin-setup --no-admin --no-shortcuts @args
 }

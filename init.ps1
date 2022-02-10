@@ -1,31 +1,43 @@
-<#
-.SYNOPSIS
-init.ps1
-PowerShell bootstrap
-#>
+### init.ps1 -- PowerShell bootstrap
 
-<#------------------------------------------------------------------------------
-Prerequisites
-------------------------------------------------------------------------------#>
+################################################################################
+## Prerequisites
+################################################################################
 
+## Use PowerShell 7 and above
 if ($PSVersionTable.PSVersion.Major -lt 7) {
     Write-Host "PowerShell is old. Please use version 7 or above"
     return
 }
 
-<#------------------------------------------------------------------------------
-Bootstrap
-------------------------------------------------------------------------------#>
+$global:rice = @{
+    home_dir = $PSScriptRoot
+    is_root = if ($IsWindows) {
+        ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
+    } else {
+        (id -u) -eq 0
+    }
+}
 
-## Modules
-. $PSScriptRoot/pwsh/init-base.ps1
-. rice_include init-lib-windows
-. rice_include theme-my-pwsh
-. rice_include plugin-zlua
+function rice_include {
+    param ($file)
+    $file = Join-Path $rice.home_dir $file
+    if (Test-Path -PathType Leaf $file) {
+        . $file @args
+    }
+}
 
 ## PATH
-$env:PATH += [IO.Path]::PathSeparator + $rice.scripts_dir
+$env:PATH += [IO.Path]::PathSeparator + (Join-Path $rice.home_dir scripts)
 
-## Local config
-. rice_source_if_exists (Join-Path $rice.home_dir aliases.ps1)
-. rice_source_if_exists (Join-Path $rice.home_dir local.ps1)
+################################################################################
+## Load other files
+################################################################################
+
+## A workaround to source files from a function call
+. rice_include pwsh/init-env.ps1
+. rice_include pwsh/init-aliases.ps1
+. rice_include pwsh/init-aliases-win.ps1
+. rice_include pwsh/plugin-zlua.ps1
+. rice_include pwsh/theme-my-pwsh.ps1
+. rice_include local.ps1

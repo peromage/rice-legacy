@@ -1,14 +1,10 @@
-<#
-.SYNOPSIS
-theme-normal.ps1
-Normal mediocre prompt
-#>
+### theme-normal.ps1 -- Normal mediocre prompt
 
 function global:_simplifyHomePath {
     $pwd.Path -replace ([regex]::Escape($HOME)+'(.*)'),'~$1'
 }
 
-if ($rice.root_user) {
+if ($rice.is_root) {
 function global:prompt {
     Write-Host -NoNewline -ForegroundColor DarkGray "["
     Write-Host -NoNewline -ForegroundColor Red "$([Environment]::UserName)"

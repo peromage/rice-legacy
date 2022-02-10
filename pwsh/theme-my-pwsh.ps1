@@ -1,14 +1,10 @@
-<#
-.SYNOPSIS
-theme-my-pwsh.ps1
-My pwsh prompt. It is lite
-#>
+### theme-my-pwsh.ps1 -- My pwsh prompt. It is lite
 
 function global:_simplifyHomePath {
     $pwd.Path -replace ([regex]::Escape($HOME)+'(.*)'),'~$1'
 }
 
-if ($rice.root_user) {
+if ($rice.is_root) {
 function global:prompt {
     Write-Host -NoNewline -ForegroundColor Red "$(_simplifyHomePath)"
     Write-Host -NoNewline -ForegroundColor DarkGray ">!"

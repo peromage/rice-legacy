@@ -1,25 +1,22 @@
-<#
-.SYNOPSIS
-init-lib-windows.ps1
-Utilities for Windows Only
-#>
+### init-aliases-win.ps1 -- Utilities for Windows Only
 
-<#------------------------------------------------------------------------------
-Skips on non-Windows platform
-------------------------------------------------------------------------------#>
+################################################################################
+## Skips on non-Windows platform
+################################################################################
 
 if (-not $IsWindows) {
     return
 }
 
-<#------------------------------------------------------------------------------
-Admin related
-------------------------------------------------------------------------------#>
+################################################################################
+## Admin related
+################################################################################
 
 function testAdmin {
     return ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(
         [Security.Principal.WindowsBuiltinRole]::Administrator)
 }
+Set-Alias issu testAdmin
 
 function runasAdmin {
     if (testAdmin) {
@@ -38,6 +35,7 @@ function runasAdmin {
         }
     }
 }
+Set-Alias sudo runasAdmin
 
 function evaltoAdmin {
     if (testAdmin) {
@@ -52,10 +50,11 @@ function evaltoAdmin {
         $proc.Start() | Out-Null
     }
 }
+Set-Alias su evaltoAdmin
 
-<#------------------------------------------------------------------------------
-Operation of path
-------------------------------------------------------------------------------#>
+################################################################################
+## Operation of path
+################################################################################
 
 function getEnvUserPath {
     $path = [Environment]::GetEnvironmentVariable(
@@ -132,9 +131,9 @@ function removeEnvUserPath {
     setEnvUserPath $newPath
 }
 
-<#------------------------------------------------------------------------------
-Operation of environment variables
-------------------------------------------------------------------------------#>
+################################################################################
+## Operation of environment variables
+################################################################################
 
 function setEnvUserVars {
     param([hashtable]$envVarHash)
@@ -152,10 +151,10 @@ function removeEnvUserVars {
     }
 }
 
-<#------------------------------------------------------------------------------
-Aliases
-------------------------------------------------------------------------------#>
+################################################################################
+## Others
+################################################################################
 
-Set-Alias sudo runasAdmin
-Set-Alias su evaltoAdmin
-Set-Alias issu testAdmin
+function cygwin-install {
+    cygwin-setup --no-admin --no-shortcuts @args
+}
