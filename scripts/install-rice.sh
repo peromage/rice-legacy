@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 ## Rice is assumed to be cloned at $HOME/.rice
+RICE_ROOT=$HOME/.rice
 
 read -p 'This will overwrite config files. Proceed anyway? (y/n) ' -r -n 1 \
     && [[ $REPLY =~ ^[nN]$ ]] \
@@ -10,19 +11,19 @@ echo
 
 echo Configuring bash config...
 cat <<EOF >>$HOME/.bashrc
-source $HOME/.rice/init.bash
+source $RICE_ROOT/init.bash
 update-gpg-agent
 EOF
 
 echo Configuring git config...
 cat <<EOF >$HOME/.gitconfig
 [include]
-path = ~/.rice/config/.gitconfig
+path = $RICE_ROOT/config/.gitconfig
 EOF
 
 echo Configuring tmux config...
 cat <<EOF >$HOME/.tmux.conf
-source ~/.rice/config/.tmux.conf 
+source $RICE_ROOT/config/.tmux.conf 
 EOF
 
 echo Configuring gpg config...
