@@ -48,6 +48,10 @@ base-devel
 FONT_PACKAGES="
 adobe-source-han-sans-cn-fonts
 adobe-source-han-serif-cn-fonts
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra
 otf-cascadia-code
 ttc-iosevka
 "
