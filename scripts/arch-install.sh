@@ -32,6 +32,7 @@ efibootmgr
 pulseaudio
 pulseaudio-alsa
 pavucontrol
+ntfs-3g
 "
 
 DE_PACKAGES="
@@ -69,6 +70,7 @@ fcitx-im
 fcitx-configtool
 fcitx-cloudpinyin
 fcitx-sunpinyin
+rsync
 "
 
 chdo() {
