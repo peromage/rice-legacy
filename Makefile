@@ -9,19 +9,23 @@ source $(RICE_ROOT)/init.bash
 update-gpg-agent
 endef
 
-export define gitconf :=
+export define git_conf :=
 [include]
 path = $(RICE_ROOT)/config/.gitconfig
 endef
 
-export define tmuxconf :=
+export define tmux_conf :=
 source $(RICE_ROOT)/config/.tmux.conf 
 endef
 
-export define gpgconf :=
+export define gpg_agent_conf :=
 enable-ssh-support
 allow-emacs-pinentry
 pinentry-program /usr/bin/pinentry
+default-cache-ttl 600
+default-cache-ttl-ssh 600
+max-cache-ttl 1800
+max-cache-ttl-ssh 1800
 endef
 
 export define sshcontrol :=
@@ -42,15 +46,15 @@ bash:
 
 git:
 	@echo Configuring git config...
-	@echo "$$gitconf" >$(HOME)/.gitconfig
+	@echo "$$git_conf" >$(HOME)/.gitconfig
 
 tmux:
 	@echo Configuring tmux config...
-	@echo "$$tmuxconf" >$(HOME)/.tmux.conf
+	@echo "$$tmux_conf" >$(HOME)/.tmux.conf
 
 gpg:
 	@echo Configuring gpg config...
-	@echo "$$gpgconf" >$(HOME)/.gnupg/gpg-agent.conf
+	@echo "$$gpg_agent_conf" >$(HOME)/.gnupg/gpg-agent.conf
 	@echo "$$sshcontrol" >$(HOME)/.gnupg/sshcontrol
 
 ## End recipes
