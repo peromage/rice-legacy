@@ -25,7 +25,7 @@ pinentry-program /usr/bin/pinentry
 endef
 
 export define sshcontrol :=
-904C369CCEB586593AE642BB17AAC50C01213056
+954DD3DC90FC80A52D76A0F1FF3C0EBCC35DA8CB
 endef
 
 ## End variables
