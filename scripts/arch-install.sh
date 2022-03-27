@@ -71,6 +71,8 @@ fcitx-configtool
 fcitx-cloudpinyin
 fcitx-sunpinyin
 rsync
+pass
+xclip
 "
 
 chdo() {
