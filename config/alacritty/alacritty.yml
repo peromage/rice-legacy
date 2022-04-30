@@ -24,7 +24,7 @@ window:
     x: 2
     y: 2
   opacity: 1.0
-  title: Alacritty
+  title: owo
   dynamic_title: false
 
 scrolling:
