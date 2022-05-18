@@ -21,7 +21,7 @@ $env:XDG_CONFIG_HOME = Join-Path $HOME .config
 $env:XDG_CACHE_HOME = Join-Path $HOME .cache
 
 ### PATH
-$env:PATH += [IO.Path]::PathSeparator + (Join-Path $ricevar.home.Parent.FullName bin)
+$env:PATH += [IO.Path]::PathSeparator + (Join-Path $ripwsh.home.Parent.FullName bin)
 
 ### Common
 $env:EDITOR = "vim"

@@ -8,7 +8,7 @@ if ($PSVersionTable.PSVersion.Major -lt 7) {
     return
 }
 
-$global:ricevar = @{
+$global:ripwsh = @{
     home = Get-Item $PSScriptRoot
     root = $IsWindows ? ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator) : ((id -u) -eq 0)
 }
@@ -17,7 +17,7 @@ function rinclude {
     <# Return a string which can be evaluated to source the module file.
 The parameter FILE implies suffix .ps1. #>
     param ($file)
-    $file = Join-Path $ricevar.home.FullName "${file}.ps1"
+    $file = Join-Path $ripwsh.home.FullName "${file}.ps1"
     return ". ${file} $args"
 }
 

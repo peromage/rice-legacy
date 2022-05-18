@@ -16,13 +16,13 @@ case "$-" in
 esac
 
 ## Directory where this script is
-rice_home=$(dirname $(realpath "$BASH_SOURCE"))
+ribash_home=$(dirname $(realpath "$BASH_SOURCE"))
 
 ## Module source command
 rinclude() {
     ## Source the given module file
     ## File name implies suffix ".sh"
-    local file="$rice_home/${1}.sh" && shift
+    local file="$ribash_home/${1}.sh" && shift
     source $file $@
 }
 
