@@ -12,7 +12,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
 ### PATH
-PATH=$PATH:$(dirname $rice_home)/scripts
+PATH=$PATH:$(dirname $rice_home)/bin
 
 ### Common
 export EDITOR=vim

@@ -30,7 +30,7 @@ Bash
 - *config*: Configurations of other commonly used applications.
 - *scripts*: Executable scripts.
 
-## Credits
+## Acknowledgement
 
 This repo used the following projects:
 
