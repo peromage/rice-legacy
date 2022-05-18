@@ -6,21 +6,17 @@ This is a collection of my daily tool configurations.
 
 ## Get Started
 
-### PowerShell
+Simply use `install.sh` script to install supported configs.
 
-```powershell
-# In $PROFILE.CurrentUserAllHosts
-# Disposable code goes into rice/local.ps1
-. pwsh/init.ps1
+```sh
+# List supported configs
+$ ./install.sh
+
+# Install selected ones
+$ ./install.sh bash pwsh git tmux
 ```
 
-### Bash
-
-```bash
-# In ~/.bashrc
-# Disposable code goes into rice/local.sh
-. bash/init.sh
-```
+To add a new config installation, define a function in `install.sh` with name `NAME_conf`. Check the script for details.
 
 ## Why not use GNU Stow to manage dotfiles?
 

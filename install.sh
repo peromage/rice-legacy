@@ -65,9 +65,10 @@ config() {
 
 ## List all available config if no components supplied
 if [[ $# -eq 0 ]]; then
-       echo "Available config:"
-       declare -F | grep -Po '(?<=declare -f )[a-zA-Z0-9_-]+(?=_conf$)'
-       exit 1
+    echo "Usage: $(basename $0) CONFIG CONFIG ..."
+    echo "Available configs:"
+    declare -F | grep -Po '(?<=declare -f )[a-zA-Z0-9_-]+(?=_conf$)'
+    exit 1
 fi
 
 ## Iterate components
