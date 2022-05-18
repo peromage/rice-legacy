@@ -1,4 +1,4 @@
-### init-aliases-win.bash -- Aliases for Windows
+### init-cmd-win.sh -- Commands for Windows
 
 [[ $OS =~ [Ww]indows ]] && {
 

@@ -1,4 +1,4 @@
-### init-env.bash -- Environment variables
+### init-env.sh -- Environment variables
 
 ### XDG
 export XDG_DATA_HOME=$HOME/.local/share

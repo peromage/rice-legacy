@@ -1,4 +1,4 @@
-### init-aliases.bash -- Aliases
+### init-cmd.sh -- Commands
 
 ## Common aliases
 alias ll="ls -lahF --color=auto"

@@ -1,4 +1,4 @@
-### theme-fish.bash -- Fish style prompt
+### theme-fish.sh -- Fish style prompt
 
 _PWD_FISH_COLLAPSED_() {
     local pwd="$1"
