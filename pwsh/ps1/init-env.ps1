@@ -1,6 +1,6 @@
 ### init-env.ps1 -- Environment variables
 
-## PSReadLine
+### PSReadLine
 &{
     $my_psreadline_options = @{
         EditMode = "Emacs"
@@ -11,13 +11,17 @@
         PredictionSource = "History"
     }
     Set-PSReadLineOption @my_psreadline_options
+    Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 }
 
-## XDG
+### XDG
 $env:XDG_DATA_HOME = Join-Path $HOME .local/share
 $env:XDG_STATE_HOME = Join-Path $HOME .local/state
 $env:XDG_CONFIG_HOME = Join-Path $HOME .config
 $env:XDG_CACHE_HOME = Join-Path $HOME .cache
 
-## Common
+### PATH
+$env:PATH += [IO.Path]::PathSeparator + (Join-Path $ricevar.home.Parent.FullName scripts)
+
+### Common
 $env:EDITOR = "vim"

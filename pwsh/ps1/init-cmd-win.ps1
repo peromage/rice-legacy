@@ -1,16 +1,12 @@
 ### init-aliases-win.ps1 -- Utilities for Windows Only
 
-################################################################################
-## Skips on non-Windows platform
-################################################################################
+### Skips on non-Windows platform
 
 if (-not $IsWindows) {
     return
 }
 
-################################################################################
-## Admin related
-################################################################################
+### Admin related
 
 function testAdmin {
     return ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(
@@ -52,9 +48,7 @@ function evaltoAdmin {
 }
 Set-Alias su evaltoAdmin
 
-################################################################################
-## Operation of path
-################################################################################
+### Operation of path
 
 function getEnvUserPath {
     $path = [Environment]::GetEnvironmentVariable(
@@ -131,9 +125,7 @@ function removeEnvUserPath {
     setEnvUserPath $newPath
 }
 
-################################################################################
-## Operation of environment variables
-################################################################################
+### Operation of environment variables
 
 function setEnvUserVars {
     param([hashtable]$envVarHash)
@@ -151,9 +143,7 @@ function removeEnvUserVars {
     }
 }
 
-################################################################################
-## Others
-################################################################################
+### Others
 
 function cygwin-install {
     cygwin-setup --no-admin --no-shortcuts @args

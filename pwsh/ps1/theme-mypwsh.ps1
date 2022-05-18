@@ -4,7 +4,7 @@ function global:_simplifyHomePath {
     $pwd.Path -replace ([regex]::Escape($HOME)+'(.*)'),'~$1'
 }
 
-if ($rice.is_root) {
+if ($ricevar.root) {
 function global:prompt {
     Write-Host -NoNewline -ForegroundColor Red "$(_simplifyHomePath)"
     Write-Host -NoNewline -ForegroundColor DarkGray ">!"
