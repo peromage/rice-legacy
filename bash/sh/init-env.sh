@@ -1,15 +1,18 @@
 ### init-env.bash -- Environment variables
 
-## XDG
+### XDG
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 
-## Input method
+### Input method
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-## Common
+### PATH
+PATH=$PATH:$(dirname $rice_home)/scripts
+
+### Common
 export EDITOR=vim
