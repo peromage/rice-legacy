@@ -2,38 +2,38 @@
 
 > Keep ricing
 
-This is a collection of configurations for my daily used tools.
+This is a collection of my daily tool configurations.
 
 ## Get Started
 
-PowerShell
+### PowerShell
 
 ```powershell
 # In $PROFILE.CurrentUserAllHosts
-# Local changes go into rice/local.ps1
-. rice/init.ps1
+# Disposable code goes into rice/local.ps1
+. pwsh/init.ps1
 ```
 
-Bash
+### Bash
 
 ```bash
 # In ~/.bashrc
-# Local changes go into rice/local.bash
-. rice/init.bash
+# Disposable code goes into rice/local.sh
+. bash/init.sh
 ```
 
-## Directories
+## Why not use GNU Stow to manage dotfiles?
 
-- *pwsh*: PowerShell init files.
-- *bash*: Bash init files.
-- *notes*: Some notes.
-- *config*: Configurations of other commonly used applications.
-- *scripts*: Executable scripts.
+`Stow` is ideally good for a clean installation like Arch Linux where there are minimal files created in user's home directory. However, most of popular distros prefer to create a bunch of files by default, then `Stow` will have a hard time to link my files.
 
-## Acknowledgement
+Unfortunately I have to work on those distros from time to time.
 
-This repo used the following projects:
+Also sometimes configs are modified for specific purposes but those changes are not intended to be tracked.
 
-- [z.lua][zlua_url]
+So `Stow` doesn't really work well for me and I prefer to refer my config in the local config file if it supports include-ish syntax.
 
-[zlua_url]: https://github.com/skywind3000/z.lua
+## Complementary Tools
+
+Quick jump
+
+- [z.lua](https://github.com/skywind3000/z.lua)
